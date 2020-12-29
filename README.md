@@ -10,6 +10,10 @@ Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
 pip install -r requirements.txt
 ```
 
+## Demo
+
+  [Click Here](tvseries.mohitdevda.com) to check the live version.
+
 ## API Usage
 
   Returns json data of TV Series details matching the search query.
