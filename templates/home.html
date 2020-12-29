@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    - Home
+{% endblock %}
+
+{% block page-css %}
+
+{% endblock %}
+
+{% block page-heading %}
+    Dashboard
+{% endblock %}
+
+{% block content %}
+    <div class="row pt-2">
+        <div class="col-md-4 pb-3">
+            <div class="card border-secondary mb-3">
+                <div class="card-body text-dark shadow-sm util-card">
+                    <h5 class="card-title pb-2">TV Series Finder</h5>
+                    <p class="card-text pb-2">A quick tool to find info about tv series based on keyword search.</p>
+                    <a href="{% url 'tv-series-finder' %}" class="btn btn-primary stretched-link">Go</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

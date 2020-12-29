@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    - TV Series Finder
+{% endblock %}
+
+{% block page-css %}
+    <link rel="stylesheet" href="{% static 'css/pagination.css' %}">
+{% endblock %}
+
+{% block page-heading %}
+    TV Series Finder
+{% endblock %}
+
+{% block extra-content %}
+    <form class="form-inline">
+        <div class="form-group mx-sm-3 mb-2">
+            <label for="tv-series-search-box" class="sr-only">Search TV Series</label>
+            <input type="text" class="form-control" id="tv-series-search-box" placeholder="TV Series Name...">
+        </div>
+        <button type="submit" class="btn btn-primary mb-2" id="tv-series-search-button">Search</button>
+    </form>
+{% endblock %}
+
+{% block content %}
+    <div id="search_results"></div>
+    <div id="recent-search-terms" class="card my-3">
+        <h4 class="card-header">Recent Searches</h4>
+        <div class="card-body">
+            {% for term in search_terms %}
+                <span class="h5"><a href="#" class="badge badge-info" onclick="autoSearch('{{ term }}')">{{ term }}</a></span>
+            {% endfor %}
+        </div>
+    </div>
+    <div id="popular-search-terms" class="card my-3">
+        <h4 class="card-header">Popular Searches</h4>
+        <div class="card-body">
+            {% for term in popular_searches %}
+                <span class="h5"><a href="#" class="badge badge-info" onclick="autoSearch('{{ term }}')">{{ term }}</a></span>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="box mt-2 mb-4 float-right">
+        <ul id="results-paginator" class="pagination"></ul>
+        <div class="show"></div>
+    </div>
+{% endblock %}
+
+{% block page-js %}
+    <script type="text/javascript" src="{% static 'js/pagination.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/tv-series-finder.js' %}"></script>
+{% endblock %}
