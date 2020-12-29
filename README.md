@@ -4,7 +4,7 @@ TV Series Finder is a simple tool to get TV Series details by passing a search q
 
 ## Installation
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar. Please install the dependencies in a virtual environment.
+Use the package manager [pip](https://pip.pypa.io/en/stable/) to install the dependencies. Please test in a virtual environment.
 
 ```bash
 pip install -r requirements.txt
