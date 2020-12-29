@@ -12,7 +12,7 @@ pip install -r requirements.txt
 
 ## Demo
 
-  [Click Here](tvseries.mohitdevda.com) to check the live version.
+  [Click Here](https://tvseries.mohitdevda.com/) to check the live version.
 
 ## API Usage
 
