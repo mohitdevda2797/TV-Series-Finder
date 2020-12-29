@@ -10,7 +10,7 @@ class SearchTerm(models.Model):
     count = models.IntegerField(default=0)
 
     def __str__(self):
-        return self.search_term
+        return str(self.search_term)
 
 
 class TvSeries(models.Model):
@@ -23,4 +23,4 @@ class TvSeries(models.Model):
     summary = models.TextField(blank=True, null=True)
 
     def __str__(self):
-        return self.name
+        return str(self.name)
