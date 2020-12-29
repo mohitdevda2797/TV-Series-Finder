@@ -9,6 +9,6 @@ def home_view(request):
 
 
 def search_view(request):
-    search_terms = SearchTerm.objects.all().values_list('search_term', flat=True)[:5]
-    popular_searches = SearchTerm.objects.all().order_by('-count').values_list('search_term', flat=True)[:5]
+    search_terms = SearchTerm.objects.all().values_list('search_term', flat=True)[:10]
+    popular_searches = SearchTerm.objects.all().order_by('-count').values_list('search_term', flat=True)[:10]
     return render(request, 'utils/tv-series-finder.html', {'search_terms': search_terms, 'popular_searches': popular_searches})
