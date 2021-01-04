@@ -8,6 +8,24 @@ function replaceNull(data) {
     return data;
 }
 
+function handleRating(rating) {
+    let className = 'badge-danger'
+    if (rating === 'NA'){
+        className = 'badge-secondary'
+    }
+    else if (rating > 7){
+        className = 'badge-success'
+    }
+    return `<span class="badge ${className}">${rating}</span>`
+}
+
+function handleNullImage(image_url) {
+    if (image_url === null){
+        return '/static/img/placeholder.png&text=Image+Not+Available'
+    }
+    return image_url;
+}
+
 function loadSearchResults(page = 1) {
     let search_query = search_input_selector.val();
     let url = '/api/tv-series-finder';
@@ -31,13 +49,13 @@ function loadSearchResults(page = 1) {
                         <div class="card shadow mb-3 w-100 mx-3"><div class="card-body">
                         <div class="row no-gutters align-items-center">
                         <div class="col-auto">
-                            <img class="img-fluid img-rounded" src="${x.image}" alt="x${replaceNull(x.name)}">
+                            <img class="img-fluid img-rounded" src="${handleNullImage(x.image)}" alt="x${replaceNull(x.name)}">
                         </div>
                         <span class="col mx-4 my-2">
                         <a target="_blank" rel="nofollow" href="${x.url}">
                             <div class="text-primary lead font-weight-bold">${replaceNull(x.name)}</div>
                         </a>
-                        <span class="small text-gray-500">Language: ${replaceNull(x.language)} | Avg. Rating: ${replaceNull(x.rating)}</span>
+                        <span class="small text-gray-500">Language: ${replaceNull(x.language)} | Avg. Rating: ${handleRating(replaceNull(x.rating))}</span>
                         <div class="mt-2 text-medium-size text-gray-800">${replaceNull(x.summary)}</p></div></div></div></div></div>`
                     );
                 }
